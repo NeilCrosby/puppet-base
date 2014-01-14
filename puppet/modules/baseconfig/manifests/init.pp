@@ -8,7 +8,7 @@ class baseconfig {
   }
 
   host { 'hostmachine':
-    ip => '192.168.0.42';
+    ip => $ipaddress;
   }
 
   file {
