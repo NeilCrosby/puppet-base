@@ -5,7 +5,7 @@
 define apache_vhosts::vhost() {
   file {
     "/etc/apache2/sites-available/${name}":
-      source  => "/vagrant/config/apache/${name}",
+      source  => "puppet:///config/apache_vhosts/${name}",
       require => Package['apache2'],
       notify  => Service['apache2'];
 
