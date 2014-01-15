@@ -2,10 +2,13 @@
 #
 # Adds and enables virtual hosts. Sets up /var/www symlinks.
 #
-class apache_vhosts ($vhost = 'static-site') {
+class apache_vhosts ($vhost = 'static-site', $path = '/vagrant') {
   file { '/var/www':
     ensure => directory;
   }
 
-  apache_vhosts::vhost { $vhost: }
+  apache_vhosts::vhost {
+  	$vhost:
+  	path => $path
+  }
 }
